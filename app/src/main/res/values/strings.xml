@@ -12,4 +12,10 @@
     <string name="button_loading">We are loading </string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="notification_channel_id" translatable="false">loadapp_channel</string>
+
+    <string name="glide_desc">Glide - Image Loading Library By BumpTech</string>
+    <string name="loadapp_desc">LoadApp - Current repository by Udacity</string>
+    <string name="retrofit_desc">Retrofit - Type-safe HTTP client for Android and Java by Square, Inc</string>
+
+    <string name="button_state_complete" translatable="false">Download</string>
 </resources>

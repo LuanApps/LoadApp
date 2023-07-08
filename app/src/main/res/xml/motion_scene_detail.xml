@@ -6,11 +6,8 @@
 
         app:constraintSetStart="@+id/start"
         app:constraintSetEnd="@+id/end"
-        app:duration="2000">
-        <OnClick
-            app:targetId="@id/status"
-            app:clickAction="toggle"
-            />
+        app:duration="2000"
+        app:autoTransition="animateToEnd">
 
         <KeyFrameSet>
 
@@ -22,7 +19,7 @@
                 android:rotation="-360"
                 />
             <KeyAttribute
-                app:framePosition="100"
+                app:framePosition="0"
                 app:motionTarget="@id/status"
                 android:rotation="-720"
                 />

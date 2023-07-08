@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- A transition describes an animation via start and end state -->
+    <Transition
+
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end"
+        app:duration="2000">
+        <OnClick
+            app:targetId="@id/status"
+            app:clickAction="toggle"
+            />
+
+        <KeyFrameSet>
+
+            <!-- KeyAttributes modify attributes during motion -->
+            <KeyAttribute
+                app:motionTarget="@id/status"
+                android:scaleY="2.0"
+                android:scaleX="2.0"
+                android:rotation="-360"
+                />
+            <KeyAttribute
+                app:framePosition="100"
+                app:motionTarget="@id/status"
+                android:rotation="-720"
+                />
+        </KeyFrameSet>
+    </Transition>
+
+    <!-- Constraints to apply at the start of the animation -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/status"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/filename"
+            app:layout_constraintTop_toTopOf="@+id/status_label"
+            />
+    </ConstraintSet>
+
+    <!-- Constraints to apply at the end of the animation -->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/filename"
+            app:layout_constraintTop_toTopOf="@+id/status_label"
+            />
+    </ConstraintSet>
+</MotionScene>

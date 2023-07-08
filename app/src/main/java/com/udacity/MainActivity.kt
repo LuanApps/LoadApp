@@ -17,14 +17,12 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import com.udacity.databinding.ActivityMainBinding
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private var git_url: String? = null
     private var git_filename: String? = null
-    lateinit var loadingButton: Button
+    lateinit var loadingButton: LoadingButton
     lateinit var radioGroup: RadioGroup
     val PERMISSION_REQUEST_CODE = 117
 
@@ -60,8 +58,10 @@ class MainActivity : AppCompatActivity() {
         loadingButton.setOnClickListener {
             if (isInternetAvailable()) {
                 if (radioGroup.checkedRadioButtonId == -1) {
+                    loadingButton.buttonState = ButtonState.Clicked
                     Toast.makeText(this, "Please select the file to download", Toast.LENGTH_SHORT).show()
                 } else {
+                    loadingButton.buttonState = ButtonState.Loading
                     download()
                 }
             }
@@ -97,6 +97,7 @@ class MainActivity : AppCompatActivity() {
     private val receiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
+            loadingButton.buttonState = ButtonState.Completed
             if (!git_filename.isNullOrEmpty()) {
                 // Check if the download was successful
                 val downloadManager = getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager

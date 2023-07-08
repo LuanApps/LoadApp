@@ -55,15 +55,17 @@
 
         </RadioGroup>
 
-    <Button
+    <com.udacity.LoadingButton
         android:id="@+id/custom_button"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="20dp"
         android:layout_marginBottom="16dp"
-        android:background="@color/colorPrimary"
         android:text="Download"
-        android:textColor="@color/white"
+        app:backgroundColor="@color/colorPrimary"
+        app:backgroundColorLoading="@color/colorPrimaryDark"
+        app:buttonCircleColor="@color/colorAccent"
+        app:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"

@@ -1,4 +1,6 @@
 # LoadApp
+# Project for Course 3 - Udacity Android Kotlin Nanodegree Program
+# Made by Luan Ramos
 
 In this project students will create an app to download a file from Internet by clicking on a custom-built button where:
  - width of the button gets animated from left to right;
